@@ -1,0 +1,199 @@
+---
+title: "Coding Agent Template"
+description: "Overview for Coding Agent Template."
+---
+
+# Coding Agent Template
+
+A web project implemented with SQL, TypeScript source files.
+## Product Story
+Coding Agent Template is documented as a product with capabilities, workflows, configuration decisions, and integration surfaces. These pages are organized so a reader can understand the purpose of the project before they need to inspect source files.
+## Reader Paths
+- Start with the feature pages to understand what the product lets users or operators do.
+- Use self-hosting pages when deciding how the package fits into a framework or production deployment.
+- Use configuration pages to understand security, database, metadata, events, and runtime behavior.
+- Use API reference pages after the product model is clear and you need import paths, handlers, or typed contracts.
+## Knowledge Model
+Each page answers four questions: what the concept is, why it matters, how a developer or operator uses it, and where maintainers can verify the implementation. File paths and exports are kept as supporting evidence rather than the main explanation.
+## Documentation Map
+- Get Started: [Installation](/docs/installation) - Core install and configuration workflow.
+- Get Started: [Coding Agent Template](/docs) - Core landing page for the docs app.
+- Get Started: [Quickstart](/docs/quickstart) - Core first-run workflow.
+- Core Features: [Developer Tools](/docs/features/developer-tools) - Detected feature evidence with confidence 0.92.
+- Core Features: [Event Tracking](/docs/features/event-tracking) - Detected feature evidence with confidence 0.48.
+- Core Features: [Organization Management](/docs/features/organization-management) - Detected feature evidence with confidence 0.60.
+- Core Features: [Session Management](/docs/features/session-management) - Detected feature evidence with confidence 0.74.
+- Core Features: [User Management](/docs/features/user-management) - Detected feature evidence with confidence 0.68.
+- Self-Hosting: [Self-Hosting Overview](/docs/self-hosting/overview) - Detected self-hosting evidence with confidence 0.40.
+- Configuration: [Access Control](/docs/configuration/access-control) - Detected configuration evidence with confidence 0.60.
+- Configuration: [Database Adapters](/docs/configuration/database-adapters) - Detected configuration evidence with confidence 0.88.
+- Configuration: [Event Ingestion](/docs/configuration/event-ingestion) - Detected configuration evidence with confidence 0.36.
+- Configuration: [IP Geolocation](/docs/configuration/ip-geolocation) - Detected configuration evidence with confidence 0.98.
+- Configuration: [Metadata](/docs/configuration/metadata) - Detected configuration evidence with confidence 0.42.
+- Guides: [Bulk Operations](/docs/guides/bulk-operations) - Detected guide evidence with confidence 0.28.
+- Guides: [CLI Usage](/docs/guides/cli-usage) - Detected guide evidence with confidence 0.92.
+- Guides: [Custom Branding](/docs/guides/custom-branding) - Detected guide evidence with confidence 0.66.
+- Guides: [Troubleshooting](/docs/guides/troubleshooting) - Detected guide evidence with confidence 0.96.
+- Guides: [Watch Mode](/docs/guides/watch-mode) - Detected guide evidence with confidence 0.40.
+- API Reference: [Start Command](/docs/api/cli/start) - Detected api evidence with confidence 0.92.
+- API Reference: [Access Config](/docs/api/config/access-config) - Detected api evidence with confidence 0.84.
+- API Reference: [Events Config](/docs/api/config/events-config) - Detected api evidence with confidence 0.84.
+- API Reference: [Metadata Config](/docs/api/config/metadata-config) - Detected api evidence with confidence 0.84.
+- API Reference: [Studio Config](/docs/api/config/studio-config) - Detected api evidence with confidence 0.84.
+## Maintainer Snapshot
+- Project type: `web`
+- Package name: `coding-agent-template`
+- Detected runtimes/adapters: Next.js
+- Bootstrap evidence: `README.md`, `package.json`, `components.json`, `drizzle.config.ts`, `lib/db/migrations/meta/_journal.json`, `lib/db/migrations/meta/0000_snapshot.json`, `lib/db/migrations/meta/0001_snapshot.json`, `lib/db/migrations/meta/0002_snapshot.json`, `lib/db/migrations/meta/0003_snapshot.json`, `lib/db/migrations/meta/0004_snapshot.json`, `lib/db/migrations/meta/0005_snapshot.json`, `next.config.ts`, `postcss.config.mjs`, `components/task-page-client.tsx`, `lib/db/client.ts`, `lib/sandbox/agents/claude.ts`, `lib/sandbox/commands.ts`, `README.md#deploy-your-own`, `README.md#features`, `README.md#how-it-works`, `README.md#tech-stack`, `package.json:class-variance-authority`, `README.md#3-set-up-environment-variables`, `README.md#ai-branch-name-generation`, `README.md#branch-name-examples`, `README.md#optional`, `README.md#required`, `README.md#security-considerations`, `app/api/github/user/route.ts`, `lib/sandbox/package-manager.ts`, `package.json:typescript`, `package.json:@neondatabase/serverless`, `package.json:drizzle-kit`, `package.json:drizzle-orm`, `package.json:postgres`, `README.md#4-set-up-the-database`, `README.md#database-operations`, `components/theme-provider.tsx`, `package.json:next-themes`, `components/connectors-provider.tsx`, `lib/db/migrations/0000_hard_harry_osborn.sql`, `lib/db/migrations/0001_shocking_hannibal_king.sql`, `lib/db/migrations/0002_optimal_black_bird.sql`, `lib/db/migrations/0003_silent_black_panther.sql`, `lib/db/migrations/0004_dashing_jimmy_woo.sql`, `lib/db/migrations/0005_clumsy_stephen_strange.sql`, `lib/db/migrations/0005_flashy_nova.sql`, `lib/sandbox/creation.ts`, `README.md#5-start-the-development-server`, `components/logos/claude.tsx`, `components/logos/codex.tsx`, `components/logos/cursor.tsx`, `components/logos/index.ts`, `components/logos/opencode.tsx`, `README.md#usage`, `app/layout.tsx`, `components/app-layout.tsx`, `components/ui/alert.tsx`, `components/ui/dropdown-menu.tsx`, `components/ui/select.tsx`, `components/ui/sonner.tsx`, `lib/sandbox/agents/codex.ts`, `lib/sandbox/agents/cursor.ts`, `lib/sandbox/config.ts`, `app/api/tasks/route.ts`, `.env.example`, `app/api/connectors/route.ts`, `app/api/github/orgs/route.ts`, `app/api/github/repos/route.ts`, `app/api/tasks/[taskId]/route.ts`, `app/page.tsx`, `app/tasks/[taskId]/loading.tsx`, `app/tasks/[taskId]/not-found.tsx`, `app/tasks/[taskId]/page.tsx`, `components/app-layout-wrapper.tsx`, `components/connectors/manage-connectors.tsx`, `components/home-page-content.tsx`, `components/home-page-header.tsx`, `components/page-header.tsx`, `components/repo-selector.tsx`, `components/task-actions.tsx`, `components/task-details.tsx`, `components/task-duration.tsx`, `components/task-form.tsx`, `components/task-page-header.tsx`, `components/task-sidebar.tsx`, `components/ui/accordion.tsx`, `components/ui/alert-dialog.tsx`, `components/ui/avatar.tsx`, `components/ui/badge.tsx`, `components/ui/button.tsx`, `components/ui/card.tsx`, `components/ui/checkbox.tsx`, `components/ui/dialog.tsx`, `components/ui/drawer.tsx`, `components/ui/input.tsx`, `components/ui/label.tsx`, `components/ui/progress.tsx`, `components/ui/switch.tsx`, `components/ui/tabs.tsx`, `components/ui/textarea.tsx`, `lib/actions/connectors.ts`, `lib/constants.ts`, `lib/crypto.ts`, `lib/db/schema.ts`, `lib/hooks/use-task.ts`, `lib/sandbox/agents/index.ts`, `lib/sandbox/agents/opencode.ts`, `lib/sandbox/git.ts`, `lib/sandbox/sandbox-registry.ts`, `lib/sandbox/types.ts`, `lib/utils.ts`, `lib/utils/branch-name-generator.ts`, `lib/utils/cookies.ts`, `lib/utils/id.ts`, `lib/utils/logging.ts`, `lib/utils/task-logger.ts`
+## Core Capabilities
+- Developer Tools: This section explains the utilities that help developers inspect, configure, or generate parts of the product. These tools are not just UI screens; they are shortcuts for common setup, debugging, schema, email, or integration work. Key concepts: developer tools, generators, inspectors, visual editors.
+- Session Management: This area explains how the product observes active authentication state. It connects user identity, session creation, sign-in activity, cookies or tokens, and any security-sensitive controls exposed to administrators. Key concepts: sessions, sign in, tokens, cookies.
+- User Management: This capability is the administrative surface for user records. It helps an operator inspect accounts, find a user by identity, update profile or verification state, and remove records when needed. In an auth-oriented product, this page is usually one of the highest-value docs pages because it explains the exact model an admin interacts with. Key concepts: users, accounts, profiles, email verification.
+- Organization Management: This capability documents the multi-tenant administrative model. It explains how organizations group users, how teams subdivide access, and how membership or invitation actions change what a person can do inside the product. Key concepts: organizations, teams, members, invitations.
+- Event Tracking: This capability turns runtime activity into a timeline that administrators can inspect. It is especially useful for auth products because sign-ins, session creation, account updates, and organization events often need auditability and context. Key concepts: events, audit trail, activity feed, last seen.
+- Self-Hosting Overview: Self-hosting explains how the package runs inside or next to a user's own application. It clarifies which pieces are required at runtime, how the host app mounts the product, and what infrastructure must be available in production. Key concepts: runtime dependency, host application, deployment, container.
+- IP Geolocation: IP geolocation enriches security and activity views with approximate location context. It usually depends on a provider or database file, so this page separates required config, optional provider tokens, and privacy-sensitive behavior. Key concepts: IP address, geolocation provider, GeoLite, session metadata.
+- Database Adapters: Database adapter docs explain how the product connects to the same persistence layer as the host auth system. They identify supported adapters, the expected provider names, and what needs to be migrated before the UI can read or write records safely. Key concepts: Prisma, Drizzle, SQLite, Postgres.
+- Access Control: Access control defines who can open and operate the administrative surface. This page explains the relationship between roles, explicit email allowlists, IP rules, and the default behavior when no rule matches. Key concepts: roles, allowlist, blocklist, admin access.
+- Metadata: Metadata controls how the product presents itself to administrators. This usually includes title, theme, branding, and other non-functional settings that make the embedded experience feel native to the host application. Key concepts: title, theme, branding, labels.
+- Event Ingestion: Event ingestion describes how activity enters the product. It explains provider responsibilities, event shape, helper functions, and how ingested events become visible in dashboards, timelines, or last-seen fields. Key concepts: event provider, event type, severity, helpers.
+- Troubleshooting: Troubleshooting turns known setup failures into clear recovery paths. It connects symptoms to likely causes, points at the files or settings to inspect, and gives safe verification steps. Key concepts: configuration discovery, runtime errors, database migrations, permissions.
+- CLI Usage: CLI usage explains the command-line mental model: which commands exist, when to use each command, which flags affect runtime behavior, and how the CLI discovers project configuration. Key concepts: commands, flags, config discovery, local development.
+- Custom Branding: Custom branding explains how the embedded experience can match the host product. It helps developers understand the difference between visual customization and behavior-changing configuration. Key concepts: brand title, theme, logo, metadata.
+- Watch Mode: Watch mode is the development feedback loop. It keeps the product aligned with local configuration changes by monitoring files, restarting or refreshing the runtime, and reducing manual browser refreshes. Key concepts: file watcher, reload, config changes, development loop.
+- Bulk Operations: Bulk operations help operators or developers create, update, export, or seed many records at once. This page explains safety boundaries because bulk actions can change a lot of data quickly. Key concepts: bulk actions, seed data, import, export.
+## Runtime and Adapter Coverage
+- Next.js
+## Language Coverage
+- TypeScript: 75 analyzed source files
+- SQL: 2 analyzed source files
+## Config Files
+- `components.json` (ui) - shadcn/ui component aliases and project structure.
+- `drizzle.config.ts` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/_journal.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0000_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0001_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0002_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0003_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0004_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0005_snapshot.json` (database) - Database schema or adapter configuration.
+- `next.config.ts` (framework) - Next.js application configuration.
+- `package.json` (package) - Package metadata, scripts, dependencies, and exports.
+- `postcss.config.mjs` (styling) - Styling and CSS pipeline configuration.
+## Available Commands
+- `dev`: `next dev --turbopack`
+- `build`: `next build --turbopack`
+- `start`: `next start`
+- `lint`: `eslint`
+- `type-check`: `tsc --noEmit`
+- `format`: `prettier --write "**/*.{ts,tsx}"`
+- `format:check`: `prettier --check "**/*.{ts,tsx}"`
+- `db:generate`: `drizzle-kit generate`
+- `db:migrate`: `drizzle-kit migrate`
+- `db:push`: `drizzle-kit push`
+- `db:studio`: `drizzle-kit studio`
+- `prepare`: `husky`
+## Configuration Surface
+- `AI_GATEWAY_API_KEY`
+- `ANTHROPIC_API_KEY` (default: `sk-ant-api03-your-key-here`) - Required API Keys
+- `CURSOR_API_KEY` (default: `your-cursor-api-key`) - Optional API Keys (depending on which agents you want to use)
+- `ENCRYPTION_KEY` (default: `your-32-byte-hex-key`) - Optional Encryption Key (used to encrypt MCP secrets in the database)
+- `GITHUB_TOKEN` (default: `ghp_your-github-token-here`)
+- `NPM_TOKEN` (default: `npm_your-npm-token`)
+- `OPENAI_API_KEY` (default: `sk-your-openai-key-here`)
+- `POSTGRES_URL` (default: `postgresql://username:password@localhost:5432/coding_agent`) - Database
+- `VERCEL_PROJECT_ID` (default: `your-project-id`)
+- `VERCEL_TEAM_ID` (default: `your-team-id`) - Vercel Sandbox Configuration
+- `VERCEL_TOKEN` (default: `your-vercel-token`)
+## Dependencies
+- `@eslint/eslintrc` (devDependency): `^3`
+- `@neondatabase/serverless` (dependency): `^0.10.1`
+- `@radix-ui/react-accordion` (dependency): `^1.2.12`
+- `@radix-ui/react-alert-dialog` (dependency): `^1.1.15`
+- `@radix-ui/react-avatar` (dependency): `^1.1.10`
+- `@radix-ui/react-checkbox` (dependency): `^1.3.3`
+- `@radix-ui/react-dialog` (dependency): `^1.1.15`
+- `@radix-ui/react-dropdown-menu` (dependency): `^2.1.16`
+- `@radix-ui/react-label` (dependency): `^2.1.7`
+- `@radix-ui/react-progress` (dependency): `^1.1.7`
+- `@radix-ui/react-select` (dependency): `^2.2.6`
+- `@radix-ui/react-slot` (dependency): `^1.2.3`
+- `@radix-ui/react-switch` (dependency): `^1.2.6`
+- `@radix-ui/react-tabs` (dependency): `^1.1.13`
+- `@tailwindcss/postcss` (devDependency): `^4.1.13`
+- `@types/js-cookie` (dependency): `^3.0.6`
+- `@types/node` (devDependency): `^20`
+- `@types/react` (devDependency): `^19`
+- `@types/react-dom` (devDependency): `^19`
+- `@vercel/sandbox` (dependency): `^0.0.21`
+- `ai` (dependency): `5.0.51`
+- `class-variance-authority` (dependency): `^0.7.1`
+- `clsx` (dependency): `^2.1.1`
+- `drizzle-kit` (dependency): `^0.30.0`
+## README Sections
+- ## Deploy Your Own
+- ## Features
+- ### 1. Clone the repository
+- ### 2. Install dependencies
+- ### 3. Set up environment variables
+- ### 4. Set up the database
+- ### 5. Start the development server
+- ## Usage
+- ## How It Works
+- ### Required
+- ### Optional
+- ## AI Branch Name Generation
+- ### Branch Name Examples
+- ## Tech Stack
+## Named Exports
+- `Accordion`
+- `AccordionContent`
+- `AccordionItem`
+- `AccordionTrigger`
+- `AgentExecutionResult`
+- `AgentType`
+- `Alert`
+- `AlertDescription`
+- `AlertDialog`
+- `AlertDialogAction`
+- `AlertDialogCancel`
+- `AlertDialogContent`
+## CLI Options
+- `--border`
+- `--cd`
+- `--dangerously-bypass-approvals-and-sandbox`: (no --cd flag like other agents
+- `--dangerously-skip-permissions`: for automated file changes...
+- `--font-geist-mono`
+- `--font-geist-sans`
+- `--force`: for file modifications
+- `--frozen-lockfile`
+- `--git-dir`
+- `--header`: Authorization: Bearer ${server.oauthClientSecret}
+- `--heads`
+- `--help`
+- `--model`: ${modelToUse}" --dangerously-skip-permissions --verbose "${instruction}
+- `--no-audit`
+- `--no-fund`
+- `--normal-bg`
+- `--normal-border`
+- `--normal-text`
+- `--oneline`
+- `--output-format`
+- `--popover`
+- `--popover-foreground`
+- `--porcelain`
+- `--quiet`
+- `--radix-dropdown-menu-content-available-height`
+- `--radix-dropdown-menu-content-transform-origin`
+- `--radix-select-content-available-height`
+- `--radix-select-content-transform-origin`
+- `--radix-select-trigger-height`
+- `--radix-select-trigger-width`
+- `--sidebar-open`
+- `--sidebar-width`
+- `--spacing`
+- `--transport`: http "${serverName}" "${server.baseUrl}
+- `--upgrade`
+- `--verbose`
+- `--verify`
+- `--version`: || echo "cursor-agent version check failed"',

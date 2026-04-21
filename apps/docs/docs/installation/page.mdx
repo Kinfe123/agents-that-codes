@@ -1,0 +1,63 @@
+---
+title: "Installation"
+description: "Install and configure Coding Agent Template."
+---
+
+# Installation
+
+This page explains how to get Coding Agent Template into a runnable state. It separates the setup model from the raw command inventory so readers understand what each step is preparing.
+## Setup Model
+Installation has three jobs: install the package dependencies, provide the runtime configuration the project expects, and verify the command that exercises the main workflow. If any of those steps are skipped, the application may install correctly but still fail when it tries to load auth, database, adapter, or environment-backed behavior.
+## What Gets Configured
+- Dependencies provide the framework, CLI, adapters, and runtime libraries used by the project.
+- Environment variables provide secrets, URLs, database connections, provider tokens, and deployment-specific behavior.
+- Scripts provide repeatable entrypoints for local development, production builds, tests, and release tasks.
+## Successful Setup Looks Like
+- Dependencies install with the package manager already used by the repository.
+- Required environment variables are present before runtime commands are executed.
+- The primary command starts, builds, or verifies the project without needing undocumented manual steps.
+## Install Dependencies
+Run `pnpm install` from the repository root.
+## Configure Environment Variables
+Copy `env.example` into `.env` and fill in the required values before running the project.
+- `AI_GATEWAY_API_KEY`
+- `ANTHROPIC_API_KEY` (default: `sk-ant-api03-your-key-here`) - Required API Keys
+- `CURSOR_API_KEY` (default: `your-cursor-api-key`) - Optional API Keys (depending on which agents you want to use)
+- `ENCRYPTION_KEY` (default: `your-32-byte-hex-key`) - Optional Encryption Key (used to encrypt MCP secrets in the database)
+- `GITHUB_TOKEN` (default: `ghp_your-github-token-here`)
+- `NPM_TOKEN` (default: `npm_your-npm-token`)
+- `OPENAI_API_KEY` (default: `sk-your-openai-key-here`)
+- `POSTGRES_URL` (default: `postgresql://username:password@localhost:5432/coding_agent`) - Database
+- `VERCEL_PROJECT_ID` (default: `your-project-id`)
+- `VERCEL_TEAM_ID` (default: `your-team-id`) - Vercel Sandbox Configuration
+- `VERCEL_TOKEN` (default: `your-vercel-token`)
+## Verify the Build or Runtime Command
+The most relevant command detected right now is `pnpm start`.
+## Framework and Adapter Coverage
+- Next.js
+## Configuration Files
+- `components.json` (ui) - shadcn/ui component aliases and project structure.
+- `drizzle.config.ts` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/_journal.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0000_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0001_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0002_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0003_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0004_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0005_snapshot.json` (database) - Database schema or adapter configuration.
+- `next.config.ts` (framework) - Next.js application configuration.
+- `package.json` (package) - Package metadata, scripts, dependencies, and exports.
+- `postcss.config.mjs` (styling) - Styling and CSS pipeline configuration.
+## Current Script Inventory
+- `dev`: `next dev --turbopack`
+- `build`: `next build --turbopack`
+- `start`: `next start`
+- `lint`: `eslint`
+- `type-check`: `tsc --noEmit`
+- `format`: `prettier --write "**/*.{ts,tsx}"`
+- `format:check`: `prettier --check "**/*.{ts,tsx}"`
+- `db:generate`: `drizzle-kit generate`
+- `db:migrate`: `drizzle-kit migrate`
+- `db:push`: `drizzle-kit push`
+- `db:studio`: `drizzle-kit studio`
+- `prepare`: `husky`

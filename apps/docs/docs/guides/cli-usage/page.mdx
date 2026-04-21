@@ -1,0 +1,142 @@
+---
+title: "CLI Usage"
+description: "The project has a command line interface and documented runtime flags."
+---
+
+# CLI Usage
+
+The project has a command line interface and documented runtime flags.
+## What This Is
+CLI usage explains the command-line mental model: which commands exist, when to use each command, which flags affect runtime behavior, and how the CLI discovers project configuration.
+
+Repository context: 1.  Create a Task : Enter a repository URL and describe what you want the AI to do 2.  Monitor Progress : Watch real time logs as the agent works 3.
+## Why It Matters
+CLI Usage matters because it is part of how Coding Agent Template turns repository behavior into a usable developer or operator workflow. This page gives readers the mental model first, then uses implementation evidence as supporting context.
+## Core Concepts
+- commands
+- flags
+- config discovery
+- local development
+- standalone server
+## Typical Workflow
+1. Install or run the CLI from the host project root.
+2. Choose the command that matches the task, such as starting the studio or initializing config.
+3. Pass flags for port, host, config path, watch mode, or other runtime behavior when defaults do not match the app.
+## Detailed Guide Goal
+CLI Usage takes a reader from a known starting point to a useful end state. The guide is more than a command list: it explains when to use the workflow, what state the project needs before starting, what each step changes, and how to verify that the workflow succeeded.
+
+The guide is written for someone who wants to accomplish a task, not someone browsing the source code. Commands and flags appear as tools inside the workflow while the reader stays oriented around the goal.
+
+## When to Use This
+- Use this guide when a developer needs to perform the cli usage workflow from the project root or host application.
+- Use it when a maintainer needs to understand the intended operator or developer path before changing behavior.
+- Link to API or configuration pages only after the reader understands the task.
+
+## Success Criteria
+- The reader knows the prerequisite state.
+- The reader knows what command, action, or setting moves them forward.
+- The reader knows the expected result and how to verify it.
+## Before You Start
+- Install dependencies with `pnpm install`.
+- Confirm the main workflow with `pnpm start`.
+- Review the maintainer reference before adding new examples.
+## Command Mental Model
+- `dev` runs `next dev --turbopack` and starts the local development workflow.
+- `build` runs `next build --turbopack` and creates the production build or compiled package artifacts.
+- `start` runs `next start` and starts the runtime entrypoint after dependencies or build output are ready.
+- `lint` runs `eslint` and checks or fixes code style before changes are shipped.
+- `type-check` runs `tsc --noEmit` and supports the project workflow.
+- `format` runs `prettier --write "**/*.{ts,tsx}"` and checks or fixes code style before changes are shipped.
+- `format:check` runs `prettier --check "**/*.{ts,tsx}"` and checks or fixes code style before changes are shipped.
+- `db:generate` runs `drizzle-kit generate` and supports the project workflow.
+- `db:migrate` runs `drizzle-kit migrate` and supports the project workflow.
+- `db:push` runs `drizzle-kit push` and supports the project workflow.
+- `db:studio` runs `drizzle-kit studio` and starts the runtime entrypoint after dependencies or build output are ready.
+- `prepare` runs `husky` and supports the project workflow.
+## Raw Commands and Flags
+- `dev`: `next dev --turbopack`
+- `build`: `next build --turbopack`
+- `start`: `next start`
+- `lint`: `eslint`
+- `type-check`: `tsc --noEmit`
+- `format`: `prettier --write "**/*.{ts,tsx}"`
+- `format:check`: `prettier --check "**/*.{ts,tsx}"`
+- `db:generate`: `drizzle-kit generate`
+- `db:migrate`: `drizzle-kit migrate`
+- `db:push`: `drizzle-kit push`
+- `db:studio`: `drizzle-kit studio`
+- `prepare`: `husky`
+- `--border`
+- `--cd`
+- `--dangerously-bypass-approvals-and-sandbox`: (no --cd flag like other agents
+- `--dangerously-skip-permissions`: for automated file changes...
+- `--font-geist-mono`
+- `--font-geist-sans`
+- `--force`: for file modifications
+- `--frozen-lockfile`
+- `--git-dir`
+- `--header`: Authorization: Bearer ${server.oauthClientSecret}
+- `--heads`
+- `--help`
+- `--model`: ${modelToUse}" --dangerously-skip-permissions --verbose "${instruction}
+- `--no-audit`
+- `--no-fund`
+- `--normal-bg`
+- `--normal-border`
+- `--normal-text`
+- `--oneline`
+- `--output-format`
+- `--popover`
+- `--popover-foreground`
+- `--porcelain`
+- `--quiet`
+- `--radix-dropdown-menu-content-available-height`
+- `--radix-dropdown-menu-content-transform-origin`
+- `--radix-select-content-available-height`
+- `--radix-select-content-transform-origin`
+- `--radix-select-trigger-height`
+- `--radix-select-trigger-width`
+- `--sidebar-open`
+- `--sidebar-width`
+- `--spacing`
+- `--transport`: http "${serverName}" "${server.baseUrl}
+- `--upgrade`
+- `--verbose`
+- `--verify`
+- `--version`: || echo "cursor-agent version check failed"',
+## Repository Notes
+These notes come from the repository README so the page stays grounded in existing project language.
+
+### Usage
+1. **Create a Task**: Enter a repository URL and describe what you want the AI to do
+2. **Monitor Progress**: Watch real-time logs as the agent works
+3. **Review Results**: See the changes made and the branch created
+4. **Manage Tasks**: View all your tasks in the sidebar with status updates
+## Operational Notes
+- The concept comes before the file paths, so readers understand the workflow before they inspect implementation evidence.
+- Examples stay grounded in detected commands, config names, import paths, or behavior from the repository.
+- Maintainer details live in the reference section so the main page stays useful to product readers.
+- The guide stays task-oriented: prerequisite, action, expected result, verification.
+- Each command or option is connected to its reason before the raw command inventory appears.
+## Maintainer Reference
+The sections above are the reader-facing explanation. The references below are for maintainers who need to verify or update the implementation behind this page.
+
+### Implementation Map
+- `components/task-page-client.tsx` - Evidence file that contributes to the implementation understanding for this page.
+- `lib/db/client.ts` - Evidence file that contributes to the implementation understanding for this page.
+- `lib/sandbox/agents/claude.ts` - Evidence file that contributes to the implementation understanding for this page.
+
+### Source Details
+- `components/task-page-client.tsx`: language TypeScript; exports `TaskPageClient`
+- `lib/db/client.ts`: language TypeScript; exports `db`; env `POSTGRES_URL`
+- `lib/sandbox/agents/claude.ts`: language TypeScript; exports `executeClaudeInSandbox`, `installClaudeCLI`; env `ANTHROPIC_API_KEY`; flags `--dangerously-skip-permissions`, `--help`, `--porcelain`, `--version`
+
+### Evidence
+- `components/task-page-client.tsx`
+- `lib/db/client.ts`
+- `lib/sandbox/agents/claude.ts`
+- `README.md#5-start-the-development-server`
+- `README.md#deploy-your-own`
+- `README.md#features`
+- `README.md#how-it-works`
+- `README.md#tech-stack`

@@ -1,0 +1,94 @@
+---
+title: "Self-Hosting Overview"
+description: "The repository includes guidance or runtime files for deploying the product yourself."
+---
+
+# Self-Hosting Overview
+
+The repository includes guidance or runtime files for deploying the product yourself.
+## What This Is
+Self-hosting explains how the package runs inside or next to a user's own application. It clarifies which pieces are required at runtime, how the host app mounts the product, and what infrastructure must be available in production.
+
+Repository context: You can deploy your own version of the coding agent template to Vercel with one click:
+## Why It Matters
+Self-Hosting Overview matters because it is part of how Coding Agent Template turns repository behavior into a usable developer or operator workflow. This page gives readers the mental model first, then uses implementation evidence as supporting context.
+## Core Concepts
+- runtime dependency
+- host application
+- deployment
+- container
+- production route
+## Typical Workflow
+1. Install the package as a runtime dependency when the host app serves it in production.
+2. Mount the framework adapter or standalone server at the configured base path.
+3. Verify that environment variables, database access, auth config, and allowed origins match production.
+## Detailed Architecture
+Self-Hosting Overview is about the boundary between the user's application and Coding Agent Template. The host application owns the production environment, routing, authentication configuration, database access, secrets, and deployment platform. Coding Agent Template supplies the package entrypoint, adapter, handler, or standalone runtime that plugs into that host.
+
+The practical goal is to make that boundary obvious. Developers need to know what they install, where they mount it, what configuration they pass in, and what infrastructure must already exist. They also need to understand the difference between local CLI usage and production self-hosted usage when the package is required at runtime.
+
+## Operational Considerations
+- Runtime dependencies must be installed in the environment that serves the admin surface.
+- Auth, database, and access-control configuration come from the same source of truth as the host app.
+- Preview, staging, and production each verify trusted origins, secrets, route paths, and database migrations.
+
+## Success Criteria
+- A reader knows what belongs to the host app and what belongs to the package.
+- A reader can identify the route or server integration point before editing files.
+- A reader knows which configuration must be production-ready before exposing the admin surface.
+## Runtime Shape
+This page covers the self-hosted runtime path detected from deployment files, README sections, or configuration files.
+## Integration Story
+The important idea is that Coding Agent Template can run in a production environment controlled by the user. This page makes clear which files belong to the package and which runtime settings belong to the host application.
+## Setup Checklist
+1. Install dependencies with `pnpm install`.
+2. Configure required environment variables before starting the runtime.
+3. Run `pnpm start` or the framework-specific command from the host app.
+4. Verify the mounted route, API handler, or container can reach the same auth/database configuration as the host app.
+## Repository Notes
+These notes come from the repository README so the page stays grounded in existing project language.
+
+### Deploy Your Own
+You can deploy your own version of the coding agent template to Vercel with one click:
+
+[](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fcoding-agent-template&env=POSTGRES_URL,ANTHROPIC_API_KEY,GITHUB_TOKEN,VERCEL_TEAM_ID,VERCEL_PROJECT_ID,VERCEL_TOKEN,AI_GATEWAY_API_KEY,CURSOR_API_KEY,NPM_TOKEN&envDescription=Environment+variables+for+the+coding+agent+template.+AI_GATEWAY_API_KEY+is+required+for+branch+name+generation+and+Codex+agent.+CURSOR_API_KEY+and+NPM_TOKEN+are+optional.&project-name=coding-agent-template&repository-name=coding-agent-template)
+## Configuration Files
+- `drizzle.config.ts` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/_journal.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0000_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0001_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0002_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0003_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0004_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0005_snapshot.json` (database) - Database schema or adapter configuration.
+- `next.config.ts` (framework) - Next.js application configuration.
+- `components.json` (ui) - shadcn/ui component aliases and project structure.
+## Environment Variables
+- `AI_GATEWAY_API_KEY`
+- `ANTHROPIC_API_KEY` (default: `sk-ant-api03-your-key-here`) - Required API Keys
+- `CURSOR_API_KEY` (default: `your-cursor-api-key`) - Optional API Keys (depending on which agents you want to use)
+- `ENCRYPTION_KEY` (default: `your-32-byte-hex-key`) - Optional Encryption Key (used to encrypt MCP secrets in the database)
+- `GITHUB_TOKEN` (default: `ghp_your-github-token-here`)
+- `NPM_TOKEN` (default: `npm_your-npm-token`)
+- `OPENAI_API_KEY` (default: `sk-your-openai-key-here`)
+- `POSTGRES_URL` (default: `postgresql://username:password@localhost:5432/coding_agent`) - Database
+- `VERCEL_PROJECT_ID` (default: `your-project-id`)
+- `VERCEL_TEAM_ID` (default: `your-team-id`) - Vercel Sandbox Configuration
+- `VERCEL_TOKEN` (default: `your-vercel-token`)
+## Operational Notes
+- The concept comes before the file paths, so readers understand the workflow before they inspect implementation evidence.
+- Examples stay grounded in detected commands, config names, import paths, or behavior from the repository.
+- Maintainer details live in the reference section so the main page stays useful to product readers.
+- Local development, standalone runtime, and production embedded usage are treated as separate operating modes.
+- Host-app responsibilities include auth config, database access, secrets, trusted origins, and route mounting.
+## Maintainer Reference
+The sections above are the reader-facing explanation. The references below are for maintainers who need to verify or update the implementation behind this page.
+
+### Implementation Map
+No direct implementation files were detected for this page.
+
+### Source Details
+No source-level declarations, routes, environment variables, or CLI flags were detected for these evidence files.
+
+### Evidence
+- `README.md#deploy-your-own`

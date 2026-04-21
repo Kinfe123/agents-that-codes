@@ -1,0 +1,76 @@
+---
+title: "User Management"
+description: "The project includes user listing, profile, creation, update, or deletion workflows."
+---
+
+# User Management
+
+The project includes user listing, profile, creation, update, or deletion workflows.
+## What This Is
+This capability is the administrative surface for user records. It helps an operator inspect accounts, find a user by identity, update profile or verification state, and remove records when needed. In an auth-oriented product, this page is usually one of the highest-value docs pages because it explains the exact model an admin interacts with.
+
+Repository context: The system automatically generates descriptive Git branch names using AI SDK 5 and Vercel AI Gateway.
+## Why It Matters
+User Management matters because it is part of how Coding Agent Template turns repository behavior into a usable developer or operator workflow. This page gives readers the mental model first, then uses implementation evidence as supporting context.
+## Core Concepts
+- users
+- accounts
+- profiles
+- email verification
+- last seen activity
+## Typical Workflow
+1. Find a user through the list, search, or filter UI.
+2. Open the user detail view to inspect profile, account, and session-related data.
+3. Apply mutations such as create, edit, delete, or bulk seed only when the configured access policy allows it.
+## Detailed Behavior
+User Management works as a product workflow with three layers. The first layer is the user-facing experience: what an operator sees, what they can search or inspect, and what actions they can take. The second layer is the domain model: which records, relationships, or configuration values the workflow depends on. The third layer is the safety model: which permissions, access rules, or validation steps prevent accidental or unauthorized changes.
+
+For Coding Agent Template, this feature is easiest to understand from the operator's point of view. A reader can understand what problem this page solves, what state it reads or changes, and what a successful outcome looks like before they need to think about source files.
+
+## Common Scenarios
+- A new operator wants to understand what user management is for before using it in production.
+- A developer is wiring the feature into a host application and needs to know which data, config, or permissions are involved.
+- A maintainer changed the feature and needs to update docs without forcing readers to understand the source tree first.
+
+## Success Criteria
+- Readers can explain what user management does in plain language.
+- Readers know the main objects or settings involved before they see any file paths.
+- Readers know which actions are safe, which actions are destructive, and which actions depend on access control.
+## How It Fits in the Product
+User Management is a product capability, not just a list of source files. The important story is the user-facing outcome, the data or configuration it depends on, and the guardrails that make the workflow safe to operate.
+## Repository Notes
+These notes come from the repository README so the page stays grounded in existing project language.
+
+### AI Branch Name Generation
+The system automatically generates descriptive Git branch names using AI SDK 5 and Vercel AI Gateway. This feature:
+
+- **Non-blocking**: Uses Next.js 15's `after()` function to generate names without delaying task creation
+- **Descriptive**: Creates meaningful branch names like `feature/user-authentication-A1b2C3` or `fix/memory-leak-parser-X9y8Z7`
+- **Conflict-free**: Adds a 6-character alphanumeric hash to prevent naming conflicts
+- **Fallback**: Gracefully falls back to timestamp-based names if AI generation fails
+- **Context-aware**: Uses task description, repository name, and agent context for better names
+
+### Branch Name Examples
+- `feature/add-user-auth-K3mP9n` (for "Add user authentication with JWT")
+- `fix/resolve-memory-leak-B7xQ2w` (for "Fix memory leak in image processing")
+- `chore/update-deps-M4nR8s` (for "Update all project dependencies")
+- `docs/api-endpoints-F9tL5v` (for "Document REST API endpoints")
+## Operational Notes
+- The concept comes before the file paths, so readers understand the workflow before they inspect implementation evidence.
+- Examples stay grounded in detected commands, config names, import paths, or behavior from the repository.
+- Maintainer details live in the reference section so the main page stays useful to product readers.
+- User-facing state, available actions, empty/error states, and permission boundaries are part of the product behavior.
+- The page explains what data the feature reads or changes before referencing source files.
+## Maintainer Reference
+The sections above are the reader-facing explanation. The references below are for maintainers who need to verify or update the implementation behind this page.
+
+### Implementation Map
+- `app/api/github/user/route.ts` - Route or API layer that receives requests and coordinates runtime behavior.
+
+### Source Details
+- `app/api/github/user/route.ts`: language TypeScript; exports `GET`; env `GITHUB_TOKEN`
+
+### Evidence
+- `app/api/github/user/route.ts`
+- `README.md#ai-branch-name-generation`
+- `README.md#branch-name-examples`

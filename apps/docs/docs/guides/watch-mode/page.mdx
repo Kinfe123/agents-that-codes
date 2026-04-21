@@ -1,0 +1,131 @@
+---
+title: "Watch Mode"
+description: "The CLI or runtime can watch files and reload during development."
+---
+
+# Watch Mode
+
+The CLI or runtime can watch files and reload during development.
+## What This Is
+Watch mode is the development feedback loop. It keeps the product aligned with local configuration changes by monitoring files, restarting or refreshing the runtime, and reducing manual browser refreshes.
+
+Repository context: 1.  Create a Task : Enter a repository URL and describe what you want the AI to do 2.  Monitor Progress : Watch real time logs as the agent works 3.
+## Why It Matters
+Watch Mode matters because it is part of how Coding Agent Template turns repository behavior into a usable developer or operator workflow. This page gives readers the mental model first, then uses implementation evidence as supporting context.
+## Core Concepts
+- file watcher
+- reload
+- config changes
+- development loop
+- WebSocket updates
+## Typical Workflow
+1. Start the runtime with watch mode enabled.
+2. Edit the auth or studio configuration file.
+3. Confirm the server reloads and the browser reflects the updated configuration.
+## Detailed Guide Goal
+Watch Mode takes a reader from a known starting point to a useful end state. The guide is more than a command list: it explains when to use the workflow, what state the project needs before starting, what each step changes, and how to verify that the workflow succeeded.
+
+The guide is written for someone who wants to accomplish a task, not someone browsing the source code. Commands and flags appear as tools inside the workflow while the reader stays oriented around the goal.
+
+## When to Use This
+- Use this guide when a developer needs to perform the watch mode workflow from the project root or host application.
+- Use it when a maintainer needs to understand the intended operator or developer path before changing behavior.
+- Link to API or configuration pages only after the reader understands the task.
+
+## Success Criteria
+- The reader knows the prerequisite state.
+- The reader knows what command, action, or setting moves them forward.
+- The reader knows the expected result and how to verify it.
+## Before You Start
+- Install dependencies with `pnpm install`.
+- Confirm the main workflow with `pnpm start`.
+- Review the maintainer reference before adding new examples.
+## Command Mental Model
+- `dev` runs `next dev --turbopack` and starts the local development workflow.
+- `build` runs `next build --turbopack` and creates the production build or compiled package artifacts.
+- `start` runs `next start` and starts the runtime entrypoint after dependencies or build output are ready.
+- `lint` runs `eslint` and checks or fixes code style before changes are shipped.
+- `type-check` runs `tsc --noEmit` and supports the project workflow.
+- `format` runs `prettier --write "**/*.{ts,tsx}"` and checks or fixes code style before changes are shipped.
+- `format:check` runs `prettier --check "**/*.{ts,tsx}"` and checks or fixes code style before changes are shipped.
+- `db:generate` runs `drizzle-kit generate` and supports the project workflow.
+- `db:migrate` runs `drizzle-kit migrate` and supports the project workflow.
+- `db:push` runs `drizzle-kit push` and supports the project workflow.
+- `db:studio` runs `drizzle-kit studio` and starts the runtime entrypoint after dependencies or build output are ready.
+- `prepare` runs `husky` and supports the project workflow.
+## Raw Commands and Flags
+- `dev`: `next dev --turbopack`
+- `build`: `next build --turbopack`
+- `start`: `next start`
+- `lint`: `eslint`
+- `type-check`: `tsc --noEmit`
+- `format`: `prettier --write "**/*.{ts,tsx}"`
+- `format:check`: `prettier --check "**/*.{ts,tsx}"`
+- `db:generate`: `drizzle-kit generate`
+- `db:migrate`: `drizzle-kit migrate`
+- `db:push`: `drizzle-kit push`
+- `db:studio`: `drizzle-kit studio`
+- `prepare`: `husky`
+- `--border`
+- `--cd`
+- `--dangerously-bypass-approvals-and-sandbox`: (no --cd flag like other agents
+- `--dangerously-skip-permissions`: for automated file changes...
+- `--font-geist-mono`
+- `--font-geist-sans`
+- `--force`: for file modifications
+- `--frozen-lockfile`
+- `--git-dir`
+- `--header`: Authorization: Bearer ${server.oauthClientSecret}
+- `--heads`
+- `--help`
+- `--model`: ${modelToUse}" --dangerously-skip-permissions --verbose "${instruction}
+- `--no-audit`
+- `--no-fund`
+- `--normal-bg`
+- `--normal-border`
+- `--normal-text`
+- `--oneline`
+- `--output-format`
+- `--popover`
+- `--popover-foreground`
+- `--porcelain`
+- `--quiet`
+- `--radix-dropdown-menu-content-available-height`
+- `--radix-dropdown-menu-content-transform-origin`
+- `--radix-select-content-available-height`
+- `--radix-select-content-transform-origin`
+- `--radix-select-trigger-height`
+- `--radix-select-trigger-width`
+- `--sidebar-open`
+- `--sidebar-width`
+- `--spacing`
+- `--transport`: http "${serverName}" "${server.baseUrl}
+- `--upgrade`
+- `--verbose`
+- `--verify`
+- `--version`: || echo "cursor-agent version check failed"',
+## Repository Notes
+These notes come from the repository README so the page stays grounded in existing project language.
+
+### Usage
+1. **Create a Task**: Enter a repository URL and describe what you want the AI to do
+2. **Monitor Progress**: Watch real-time logs as the agent works
+3. **Review Results**: See the changes made and the branch created
+4. **Manage Tasks**: View all your tasks in the sidebar with status updates
+## Operational Notes
+- The concept comes before the file paths, so readers understand the workflow before they inspect implementation evidence.
+- Examples stay grounded in detected commands, config names, import paths, or behavior from the repository.
+- Maintainer details live in the reference section so the main page stays useful to product readers.
+- The guide stays task-oriented: prerequisite, action, expected result, verification.
+- Each command or option is connected to its reason before the raw command inventory appears.
+## Maintainer Reference
+The sections above are the reader-facing explanation. The references below are for maintainers who need to verify or update the implementation behind this page.
+
+### Implementation Map
+No direct implementation files were detected for this page.
+
+### Source Details
+No source-level declarations, routes, environment variables, or CLI flags were detected for these evidence files.
+
+### Evidence
+- `README.md#usage`

@@ -1,0 +1,139 @@
+---
+title: "Custom Branding"
+description: "The product can be customized through branding, metadata, or theme options."
+---
+
+# Custom Branding
+
+The product can be customized through branding, metadata, or theme options.
+## What This Is
+Custom branding explains how the embedded experience can match the host product. It helps developers understand the difference between visual customization and behavior-changing configuration.
+## Why It Matters
+Custom Branding matters because it is part of how Coding Agent Template turns repository behavior into a usable developer or operator workflow. This page gives readers the mental model first, then uses implementation evidence as supporting context.
+## Core Concepts
+- brand title
+- theme
+- logo
+- metadata
+- visual identity
+## Typical Workflow
+1. Configure title, theme, and branding metadata.
+2. Preview the embedded or standalone UI in the host app.
+3. Keep branding changes separate from access, database, or adapter settings.
+## Detailed Guide Goal
+Custom Branding takes a reader from a known starting point to a useful end state. The guide is more than a command list: it explains when to use the workflow, what state the project needs before starting, what each step changes, and how to verify that the workflow succeeded.
+
+The guide is written for someone who wants to accomplish a task, not someone browsing the source code. Commands and flags appear as tools inside the workflow while the reader stays oriented around the goal.
+
+## When to Use This
+- Use this guide when a developer needs to perform the custom branding workflow from the project root or host application.
+- Use it when a maintainer needs to understand the intended operator or developer path before changing behavior.
+- Link to API or configuration pages only after the reader understands the task.
+
+## Success Criteria
+- The reader knows the prerequisite state.
+- The reader knows what command, action, or setting moves them forward.
+- The reader knows the expected result and how to verify it.
+## Before You Start
+- Install dependencies with `pnpm install`.
+- Confirm the main workflow with `pnpm start`.
+- Review the maintainer reference before adding new examples.
+## Command Mental Model
+- `dev` runs `next dev --turbopack` and starts the local development workflow.
+- `build` runs `next build --turbopack` and creates the production build or compiled package artifacts.
+- `start` runs `next start` and starts the runtime entrypoint after dependencies or build output are ready.
+- `lint` runs `eslint` and checks or fixes code style before changes are shipped.
+- `type-check` runs `tsc --noEmit` and supports the project workflow.
+- `format` runs `prettier --write "**/*.{ts,tsx}"` and checks or fixes code style before changes are shipped.
+- `format:check` runs `prettier --check "**/*.{ts,tsx}"` and checks or fixes code style before changes are shipped.
+- `db:generate` runs `drizzle-kit generate` and supports the project workflow.
+- `db:migrate` runs `drizzle-kit migrate` and supports the project workflow.
+- `db:push` runs `drizzle-kit push` and supports the project workflow.
+- `db:studio` runs `drizzle-kit studio` and starts the runtime entrypoint after dependencies or build output are ready.
+- `prepare` runs `husky` and supports the project workflow.
+## Raw Commands and Flags
+- `dev`: `next dev --turbopack`
+- `build`: `next build --turbopack`
+- `start`: `next start`
+- `lint`: `eslint`
+- `type-check`: `tsc --noEmit`
+- `format`: `prettier --write "**/*.{ts,tsx}"`
+- `format:check`: `prettier --check "**/*.{ts,tsx}"`
+- `db:generate`: `drizzle-kit generate`
+- `db:migrate`: `drizzle-kit migrate`
+- `db:push`: `drizzle-kit push`
+- `db:studio`: `drizzle-kit studio`
+- `prepare`: `husky`
+- `--border`
+- `--cd`
+- `--dangerously-bypass-approvals-and-sandbox`: (no --cd flag like other agents
+- `--dangerously-skip-permissions`: for automated file changes...
+- `--font-geist-mono`
+- `--font-geist-sans`
+- `--force`: for file modifications
+- `--frozen-lockfile`
+- `--git-dir`
+- `--header`: Authorization: Bearer ${server.oauthClientSecret}
+- `--heads`
+- `--help`
+- `--model`: ${modelToUse}" --dangerously-skip-permissions --verbose "${instruction}
+- `--no-audit`
+- `--no-fund`
+- `--normal-bg`
+- `--normal-border`
+- `--normal-text`
+- `--oneline`
+- `--output-format`
+- `--popover`
+- `--popover-foreground`
+- `--porcelain`
+- `--quiet`
+- `--radix-dropdown-menu-content-available-height`
+- `--radix-dropdown-menu-content-transform-origin`
+- `--radix-select-content-available-height`
+- `--radix-select-content-transform-origin`
+- `--radix-select-trigger-height`
+- `--radix-select-trigger-width`
+- `--sidebar-open`
+- `--sidebar-width`
+- `--spacing`
+- `--transport`: http "${serverName}" "${server.baseUrl}
+- `--upgrade`
+- `--verbose`
+- `--verify`
+- `--version`: || echo "cursor-agent version check failed"',
+## Operational Notes
+- The concept comes before the file paths, so readers understand the workflow before they inspect implementation evidence.
+- Examples stay grounded in detected commands, config names, import paths, or behavior from the repository.
+- Maintainer details live in the reference section so the main page stays useful to product readers.
+- The guide stays task-oriented: prerequisite, action, expected result, verification.
+- Each command or option is connected to its reason before the raw command inventory appears.
+## Maintainer Reference
+The sections above are the reader-facing explanation. The references below are for maintainers who need to verify or update the implementation behind this page.
+
+### Implementation Map
+- `components/logos/claude.tsx` - Evidence file that contributes to the implementation understanding for this page.
+- `components/logos/codex.tsx` - Evidence file that contributes to the implementation understanding for this page.
+- `components/logos/cursor.tsx` - Evidence file that contributes to the implementation understanding for this page.
+- `components/logos/index.ts` - Evidence file that contributes to the implementation understanding for this page.
+- `components/logos/opencode.tsx` - Evidence file that contributes to the implementation understanding for this page.
+- `components/theme-provider.tsx` - Evidence file that contributes to the implementation understanding for this page.
+- `package.json` - Evidence file that contributes to the implementation understanding for this page.
+
+### Source Details
+- `components/logos/claude.tsx`: language TypeScript; exports `Claude`
+- `components/logos/codex.tsx`: language TypeScript; exports `Codex`
+- `components/logos/cursor.tsx`: language TypeScript; exports `Cursor`
+- `components/logos/index.ts`: language TypeScript; exports `Claude`, `Codex`, `Cursor`, `OpenCode`
+- `components/logos/opencode.tsx`: language TypeScript; exports `OpenCode`
+- `components/theme-provider.tsx`: language TypeScript; exports `ThemeProvider`
+
+### Evidence
+- `components/logos/claude.tsx`
+- `components/logos/codex.tsx`
+- `components/logos/cursor.tsx`
+- `components/logos/index.ts`
+- `components/logos/opencode.tsx`
+- `components/theme-provider.tsx`
+- `package.json`
+- `package.json:next-themes`

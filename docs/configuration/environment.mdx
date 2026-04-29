@@ -1,0 +1,69 @@
+---
+title: "Environment Variables"
+description: "Environment variables provide runtime secrets, URLs, provider settings, and deployment values."
+order: 80
+---
+
+# Environment Variables
+
+Environment variables provide runtime secrets, URLs, provider settings, and deployment values.
+## Who This Helps
+This page helps developers decide which settings have to exist before environment variables works reliably. Readers need to connect each setting to behavior, ownership, and verification instead of treating configuration as a flat variable list. After reading, someone should know which values matter, where they live, and what to check after changing them.
+
+A template for building AI powered coding agents that supports Claude Code, OpenAI's Codex CLI, Cursor CLI, and opencode with Vercel Sandbox to automatically execute coding tasks on your repositories.
+## When To Use This Page
+- Environment variable documentation explains which runtime values the project expects, where those values are read, what each variable controls, and what developers should verify before running previews, workers, or production deployments.
+- Copy the example environment file and fill in your values:
+## Before You Start
+- Dependencies should already be installed with `pnpm install`.
+- Have the required runtime values ready before starting this workflow, especially `VERCEL_PROJECT_ID`, `ENCRYPTION_KEY`, `CURSOR_API_KEY`.
+- Know which configuration file owns this area, starting with `drizzle.config.ts`.
+## Key Ideas
+- environment variables
+- runtime secrets
+- configuration files
+- deployment values
+- Environment
+- Env
+## How To Think About Settings
+Configuration is useful only when readers can connect each value to behavior. Start by deciding whether the value affects credentials, persistence, routing, framework integration, output, or developer convenience.
+## Details That Matter
+- Copy the example environment file and fill in your values:
+- This workflow depends on environment backed settings such as GITHUB TOKEN, AI GATEWAY API KEY, ENCRYPTION KEY, POSTGRES URL, ANTHROPIC API KEY, OPENAI API KEY.
+## Environment Variables
+- `VERCEL_PROJECT_ID` - defaults to `your-project-id` when not provided.
+- `ENCRYPTION_KEY` - Optional Encryption Key (used to encrypt MCP secrets in the database)
+- `CURSOR_API_KEY` - Optional API Keys (depending on which agents you want to use)
+- `VERCEL_TEAM_ID` - Vercel Sandbox Configuration
+- `ANTHROPIC_API_KEY` - Required API Keys
+- `GITHUB_TOKEN` - Token used to authenticate a runtime, bot, webhook, or provider integration.
+- `NPM_TOKEN` - Token used to authenticate a runtime, bot, webhook, or provider integration.
+- `OPENAI_API_KEY` - OpenAI API key used when the project generates AI answers from retrieved context.
+- `POSTGRES_URL` - Database
+- `VERCEL_TOKEN` - Token used to authenticate a runtime, bot, webhook, or provider integration.
+- `AI_GATEWAY_API_KEY` - API key used to authenticate with the named provider.
+## Examples
+### Configuration values to line up first
+- `VERCEL_PROJECT_ID` - Runtime value used by this workflow.
+- `ENCRYPTION_KEY` - Optional Encryption Key (used to encrypt MCP secrets in the database)
+- `CURSOR_API_KEY` - Optional API Keys (depending on which agents you want to use)
+- `VERCEL_TEAM_ID` - Vercel Sandbox Configuration
+## From The README
+The README already describes this area in project language. These excerpts are the reader-facing baseline before adding more examples.
+
+### 3. Set up environment variables
+- POSTGRES URL: Your PostgreSQL connection string (works with any PostgreSQL database)
+- ANTHROPIC API KEY: Your Anthropic API key for Claude
+- GITHUB TOKEN: GitHub personal access token (for repository access)
+- VERCEL TEAM ID: Your Vercel team ID
+- VERCEL PROJECT ID: Your Vercel project ID
+- VERCEL TOKEN: Your Vercel API token
+## How To Verify Changes
+- Identify whether the option affects security, runtime mounting, data access, or presentation.
+- Prefer examples that use the same names and defaults found in the project.
+- Call out adapter-specific behavior instead of implying every setting applies to every framework.
+## Related Pages
+- [Database](/docs/configuration/database) - Database configuration explains persistence, schema, migrations, and runtime readiness.
+- [Database Adapters](/docs/configuration/database-adapters) - Database adapters connect the product to the persistence layer used by the host application.
+- [Configuration](/docs/configuration) - Runtime values, environment variables, deployment settings, and framework configuration.
+- [Architecture Overview](/docs/architecture/overview) - The architecture page explains the repository as a set of real subsystems so readers can orient themselves before diving into commands, exports, or implementation files.

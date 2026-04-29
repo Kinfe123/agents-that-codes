@@ -1,0 +1,59 @@
+---
+title: "Database"
+description: "Database configuration explains persistence, schema, migrations, and runtime readiness."
+order: 70
+---
+
+# Database
+
+Database configuration explains persistence, schema, migrations, and runtime readiness.
+## Who This Helps
+This page helps developers decide which settings have to exist before database works reliably. Readers need to connect each setting to behavior, ownership, and verification instead of treating configuration as a flat variable list. After reading, someone should know which values matter, where they live, and what to check after changing them.
+
+A template for building AI powered coding agents that supports Claude Code, OpenAI's Codex CLI, Cursor CLI, and opencode with Vercel Sandbox to automatically execute coding tasks on your repositories.
+## When To Use This Page
+- Database documentation explains how the project connects to persistence, which schema or migration files matter, and what has to be ready before runtime features read or write state.
+- Generate and run database migrations:
+## Before You Start
+- Dependencies should already be installed with `pnpm install`.
+- Have the required runtime values ready before starting this workflow, especially `POSTGRES_URL`.
+- Know which configuration file owns this area, starting with `drizzle.config.ts`.
+## Key Ideas
+- database
+- schema
+- migrations
+- adapter
+- persistence
+- Migration
+## How To Think About Settings
+Configuration is useful only when readers can connect each value to behavior. Start by deciding whether the value affects credentials, persistence, routing, framework integration, output, or developer convenience.
+## Details That Matter
+- Generate and run database migrations:
+## Environment Variables
+- `POSTGRES_URL` - Database
+## Configuration Files
+- `drizzle.config.ts` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/_journal.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0000_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0001_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0002_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0003_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0004_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0005_snapshot.json` (database) - Database schema or adapter configuration.
+## Examples
+### Configuration values to line up first
+- `POSTGRES_URL` - Database
+## From The README
+The README already describes this area in project language. These excerpts are the reader-facing baseline before adding more examples.
+
+### 4. Set up the database
+Generate and run database migrations:
+## How To Verify Changes
+- Identify whether the option affects security, runtime mounting, data access, or presentation.
+- Prefer examples that use the same names and defaults found in the project.
+- Call out adapter-specific behavior instead of implying every setting applies to every framework.
+## Related Pages
+- [Database Adapters](/docs/configuration/database-adapters) - Database adapters connect the product to the persistence layer used by the host application.
+- [Environment Variables](/docs/configuration/environment) - Environment variables provide runtime secrets, URLs, provider settings, and deployment values.
+- [Configuration](/docs/configuration) - Runtime values, environment variables, deployment settings, and framework configuration.
+- [Architecture Overview](/docs/architecture/overview) - The architecture page explains the repository as a set of real subsystems so readers can orient themselves before diving into commands, exports, or implementation files.

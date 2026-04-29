@@ -1,0 +1,49 @@
+---
+title: "CLI Usage"
+description: "CLI usage explains the commands and flags developers use to initialize, run, and debug the product."
+order: 100
+---
+
+# CLI Usage
+
+CLI usage explains the commands and flags developers use to initialize, run, and debug the product.
+## Who This Helps
+This page helps operators and contributors complete the cli usage workflow from a known starting point. Readers need a task-oriented path that explains prerequisites, actions, and verification instead of a loose command dump. After reading, someone should know the shortest safe path through the workflow and how to tell whether it actually finished correctly.
+
+A template for building AI powered coding agents that supports Claude Code, OpenAI's Codex CLI, Cursor CLI, and opencode with Vercel Sandbox to automatically execute coding tasks on your repositories.
+## When To Use This Page
+- CLI usage explains the command line mental model: which commands exist, when to use each command, which flags affect runtime behavior, and how the CLI discovers project configuration.
+## Before You Start
+- Dependencies should already be installed with `pnpm install`.
+- Have the required runtime values ready before starting this workflow, especially `VERCEL_PROJECT_ID`, `CURSOR_API_KEY`, `ENCRYPTION_KEY`.
+- Know which configuration file owns this area, starting with `drizzle.config.ts`.
+- Run commands from the project root unless the repo README says a nested app owns the workflow.
+## Key Ideas
+- commands
+- flags
+- config discovery
+- local development
+- standalone server
+- Cli
+## Run The Workflow
+1. Install or run the CLI from the host project root.
+2. Choose the command that matches the task, such as starting the studio or initializing config.
+3. Pass flags for port, host, config path, watch mode, or other runtime behavior when defaults do not match the app.
+## Useful Commands
+- `start` runs `next start` and starts the runtime entrypoint after dependencies or build output are ready.
+- `dev` runs `next dev --turbopack` and starts the local development workflow.
+- `db:generate` runs `drizzle-kit generate` and supports the project workflow.
+- `build` runs `next build --turbopack` and creates the production build or compiled package artifacts.
+## Useful Options
+No CLI options were found for this command yet.
+## Examples
+### Run the first safe workflow
+```bash
+pnpm install
+pnpm start
+```
+## Related Pages
+- [Guides](/docs/guides) - Task-oriented workflows that move readers from setup to a useful outcome.
+- [Architecture Overview](/docs/architecture/overview) - The architecture page explains the repository as a set of real subsystems so readers can orient themselves before diving into commands, exports, or implementation files.
+- [Core Backend Systems](/docs/backend/systems) - The backend page explains request handling, runtime configuration, data-facing services, and the server-side workflow behind the product.
+- [Build System and Package Structure](/docs/build/package-structure) - The build page explains how the repository is packaged, built, exported, and prepared for local development or distribution.

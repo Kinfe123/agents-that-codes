@@ -1,0 +1,61 @@
+---
+title: "Coding Agent Template"
+description: "Overview for Coding Agent Template."
+order: 0
+---
+
+# Coding Agent Template
+
+A template for building AI powered coding agents that supports Claude Code, OpenAI's Codex CLI, Cursor CLI, and opencode with Vercel Sandbox to automatically execute coding tasks on your repositories.
+## Product Story
+A template for building AI powered coding agents that supports Claude Code, OpenAI's Codex CLI, Cursor CLI, and opencode with Vercel Sandbox to automatically execute coding tasks on your repositories.
+## Reader Paths
+- Start with the overview, quickstart, and installation pages to understand the product before moving into deeper setup details.
+- Use feature pages to understand product capabilities surfaced by the README, routes, UI, or domain files.
+- Use configuration pages for runtime settings, environment files, deployment files, database files, or product config.
+- Use guides for task-oriented workflows such as CLI usage, local development, troubleshooting, or product-specific operations.
+## How These Docs Help
+Each page starts with the reader's goal, then moves into the workflow, configuration, and verification details needed to use or operate the project. File paths and exports are supporting context, not the main explanation.
+## Documentation Map
+- Get Started: [Coding Agent Template](/docs) - Overview for Coding Agent Template.
+- Get Started: [Quickstart](/docs/quickstart) - Run Coding Agent Template for the first time.
+- Get Started: [Installation](/docs/installation) - Install and configure Coding Agent Template.
+- Core Features: [Features](/docs/features) - Product capabilities and workflows readers can use or operate.
+- Core Features: [AI Responses](/docs/features/ai-responses) - AI responses turn retrieved context into a concise answer for the person asking the question.
+- Configuration: [Configuration](/docs/configuration) - Runtime values, environment variables, deployment settings, and framework configuration.
+- Configuration: [Database Adapters](/docs/configuration/database-adapters) - Database adapters connect the product to the persistence layer used by the host application.
+- Configuration: [Database](/docs/configuration/database) - Database configuration explains persistence, schema, migrations, and runtime readiness.
+- Configuration: [Environment Variables](/docs/configuration/environment) - Environment variables provide runtime secrets, URLs, provider settings, and deployment values.
+- Guides: [Guides](/docs/guides) - Task-oriented workflows that move readers from setup to a useful outcome.
+- Guides: [CLI Usage](/docs/guides/cli-usage) - CLI usage explains the commands and flags developers use to initialize, run, and debug the product.
+- Architecture: [Architecture](/docs/architecture) - How major subsystems, runtime surfaces, and workflow boundaries fit together.
+- Backend: [Backend](/docs/backend) - Server-side systems, request handling, runtime behavior, and data-facing workflows.
+- Build: [Build](/docs/build) - Build pipeline, package structure, scripts, and delivery surfaces for the repository.
+- Frontend: [Frontend](/docs/frontend) - User-facing application structure, navigation, and interface behavior.
+- Architecture: [Architecture Overview](/docs/architecture/overview) - The architecture page explains the repository as a set of real subsystems so readers can orient themselves before diving into commands, exports, or implementation files.
+- Backend: [Core Backend Systems](/docs/backend/systems) - The backend page explains request handling, runtime configuration, data-facing services, and the server-side workflow behind the product.
+- Build: [Build System and Package Structure](/docs/build/package-structure) - The build page explains how the repository is packaged, built, exported, and prepared for local development or distribution.
+- Frontend: [Frontend Application](/docs/frontend/application) - The frontend page explains the user-facing application, navigation shell, and interface workflows readers actually interact with.
+## At A Glance
+- Package name: `coding-agent-template`
+- Runtime and adapter coverage: Next.js
+## Core Capabilities
+- AI Responses: The response step prepares the user question, recent context when available, and retrieved documentation snippets for the configured model provider. It should stay grounded in the provided docs and fall back to a simpler response when the provider is unavailable. Key concepts: model provider, grounded prompt, retrieved context, fallback response.
+## Runtime and Adapter Coverage
+- Next.js
+## Common Commands
+- `dev` runs `next dev --turbopack` and starts the local development workflow.
+- `build` runs `next build --turbopack` and creates the production build or compiled package artifacts.
+- `start` runs `next start` and starts the runtime entrypoint after dependencies or build output are ready.
+## Configuration You May Need
+- `AI_GATEWAY_API_KEY` - API key used to authenticate with the named provider.
+- `ANTHROPIC_API_KEY` - Required API Keys
+- `CURSOR_API_KEY` - Optional API Keys (depending on which agents you want to use)
+- `ENCRYPTION_KEY` - Optional Encryption Key (used to encrypt MCP secrets in the database)
+- `GITHUB_TOKEN` - Token used to authenticate a runtime, bot, webhook, or provider integration.
+- `NPM_TOKEN` - Token used to authenticate a runtime, bot, webhook, or provider integration.
+- `OPENAI_API_KEY` - OpenAI API key used when the project generates AI answers from retrieved context.
+- `POSTGRES_URL` - Database
+- `VERCEL_PROJECT_ID` - defaults to `your-project-id` when not provided.
+- `VERCEL_TEAM_ID` - Vercel Sandbox Configuration
+- `VERCEL_TOKEN` - Token used to authenticate a runtime, bot, webhook, or provider integration.

@@ -1,0 +1,27 @@
+---
+title: "Core Backend Systems"
+description: "The backend page explains request handling, runtime configuration, data-facing services, and the server-side workflow behind the product."
+order: 160
+---
+
+# Core Backend Systems
+
+The backend page explains request handling, runtime configuration, data-facing services, and the server-side workflow behind the product.
+## Purpose and Scope
+This area owns request handling, runtime configuration, integrations, and data-facing behavior. It is where the product turns input into persistent state, external calls, or responses.
+## What Lives Here
+- `app/api/connectors/route.ts` - Route or API layer that receives requests and coordinates runtime behavior.
+- `app/api/github/orgs/route.ts` - Route or API layer that receives requests and coordinates runtime behavior.
+- `app/api/github/repos/route.ts` - Route or API layer that receives requests and coordinates runtime behavior.
+- `app/api/github/user/route.ts` - Route or API layer that receives requests and coordinates runtime behavior.
+- `app/api/tasks/[taskId]/route.ts` - Route or API layer that receives requests and coordinates runtime behavior.
+- `app/api/tasks/route.ts` - Route or API layer that receives requests and coordinates runtime behavior.
+## Operational Shape
+- Route or API entrypoints are detected in 11 files.
+- `AI_GATEWAY_API_KEY` - API key used to authenticate with the named provider.
+- `CURSOR_API_KEY` - Optional API Keys (depending on which agents you want to use)
+- `ENCRYPTION_KEY` - Optional Encryption Key (used to encrypt MCP secrets in the database)
+- `VERCEL_TEAM_ID` - Vercel Sandbox Configuration
+## Related Areas
+- [Build System and Package Structure](/docs/build/package-structure) - The build page explains how the repository is packaged, built, exported, and prepared for local development or distribution.
+- [Frontend Application](/docs/frontend/application) - The frontend page explains the user-facing application, navigation shell, and interface workflows readers actually interact with.

@@ -1,0 +1,60 @@
+---
+title: "AI Responses"
+description: "AI responses turn retrieved context into a concise answer for the person asking the question."
+order: 40
+---
+
+# AI Responses
+
+AI responses turn retrieved context into a concise answer for the person asking the question.
+## Who This Helps
+This page helps product readers and implementers understand how ai responses shows up in Coding Agent Template. Readers need to know the visible workflow, the state or configuration it depends on, and what success looks like before they inspect implementation files. After reading, someone should know when to use ai responses, how it behaves, and which deeper setup or reference page to open next.
+
+A template for building AI powered coding agents that supports Claude Code, OpenAI's Codex CLI, Cursor CLI, and opencode with Vercel Sandbox to automatically execute coding tasks on your repositories.
+## When To Use It
+- The response step prepares the user question, recent context when available, and retrieved documentation snippets for the configured model provider. It should stay grounded in the provided docs and fall back to a simpler response when the provider is unavailable.
+- You can deploy your own version of the coding agent template to Vercel with one click:
+## Before You Start
+- Dependencies should already be installed with `pnpm install`.
+## Key Ideas
+- model provider
+- grounded prompt
+- retrieved context
+- fallback response
+- source links
+- Ai
+## Details That Matter
+- You can deploy your own version of the coding agent template to Vercel with one click:
+- Copy the example environment file and fill in your values:
+## How It Works
+1. Prepare the user question with the documentation context already retrieved.
+2. Ask the configured model provider for a concise answer grounded in that context.
+3. Return the answer with useful references or fall back to the best available docs snippet.
+## Examples
+### What to verify
+- The feature appears in the expected screen, route, or command path.
+- Required configuration and data are present before the action runs.
+- The success state is visible to the user and the empty or failure state is still understandable.
+## Behavior Details
+- A model provider is used after retrieval, so provider credentials must exist before AI answers can run.
+- The runtime chooses a model for the answer-generation step rather than hard-coding the docs response in the command handler.
+- Answers are expected to stay grounded in retrieved documentation rather than inventing unsupported setup guidance.
+- Provider failures should fall back to the best available documentation context so the user still gets a useful response.
+## From The README
+The README already describes this area in project language. These excerpts are the reader-facing baseline before adding more examples.
+
+### Deploy Your Own
+You can deploy your own version of the coding agent template to Vercel with one click:
+
+### 3. Set up environment variables
+- POSTGRES URL: Your PostgreSQL connection string (works with any PostgreSQL database)
+- ANTHROPIC API KEY: Your Anthropic API key for Claude
+- GITHUB TOKEN: GitHub personal access token (for repository access)
+- VERCEL TEAM ID: Your Vercel team ID
+- VERCEL PROJECT ID: Your Vercel project ID
+- VERCEL TOKEN: Your Vercel API token
+## Related Pages
+- [Features](/docs/features) - Product capabilities and workflows readers can use or operate.
+- [Architecture Overview](/docs/architecture/overview) - The architecture page explains the repository as a set of real subsystems so readers can orient themselves before diving into commands, exports, or implementation files.
+- [Build](/docs/build) - Build pipeline, package structure, scripts, and delivery surfaces for the repository.
+- [Core Backend Systems](/docs/backend/systems) - The backend page explains request handling, runtime configuration, data-facing services, and the server-side workflow behind the product.

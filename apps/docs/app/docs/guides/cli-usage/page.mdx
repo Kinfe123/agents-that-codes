@@ -1,0 +1,32 @@
+---
+title: "CLI Usage"
+description: "CLI usage explains the commands and flags developers use to initialize, run, and debug the product."
+order: 80
+---
+
+# CLI Usage
+
+CLI usage explains the commands and flags developers use to initialize, run, and debug the product.
+## Goal
+CLI usage explains the command-line mental model: which commands exist, when to use each command, which flags affect runtime behavior, and how the CLI discovers project configuration.
+## Key Ideas
+- commands
+- flags
+- config discovery
+- local development
+- standalone server
+## Before You Start
+- Install dependencies with `pnpm install`.
+- Confirm the main workflow with `pnpm start`.
+- Review required configuration before running commands that create or mutate data.
+## Run The Workflow
+1. Install or run the CLI from the host project root.
+2. Choose the command that matches the task, such as starting the studio or initializing config.
+3. Pass flags for port, host, config path, watch mode, or other runtime behavior when defaults do not match the app.
+## Useful Commands
+- `start` runs `next start` and starts the runtime entrypoint after dependencies or build output are ready.
+- `dev` runs `next dev --turbopack` and starts the local development workflow.
+- `db:generate` runs `drizzle-kit generate` and supports the project workflow.
+- `build` runs `next build --turbopack` and creates the production build or compiled package artifacts.
+## Useful Options
+No CLI options were found for this command yet.

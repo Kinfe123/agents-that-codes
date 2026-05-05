@@ -1,0 +1,44 @@
+---
+title: "Environment Variables"
+description: "Environment variables provide runtime secrets, URLs, provider settings, and deployment values."
+order: 60
+---
+
+# Environment Variables
+
+Environment variables provide runtime secrets, URLs, provider settings, and deployment values.
+## What This Controls
+Environment variable documentation explains which runtime values the project expects, where those values are read, what each variable controls, and what developers should verify before running previews, workers, or production deployments.
+## Key Ideas
+- environment variables
+- runtime secrets
+- configuration files
+- deployment values
+## How To Think About Settings
+Configuration is useful only when readers can connect each value to behavior. Start by deciding whether the value affects credentials, persistence, routing, framework integration, output, or developer convenience.
+## Environment Variables
+- `VERCEL_PROJECT_ID` - defaults to `your-project-id` when not provided.
+- `ENCRYPTION_KEY` - Optional Encryption Key (used to encrypt MCP secrets in the database)
+- `CURSOR_API_KEY` - Optional API Keys (depending on which agents you want to use)
+- `VERCEL_TEAM_ID` - Vercel Sandbox Configuration
+- `ANTHROPIC_API_KEY` - Required API Keys
+- `GITHUB_TOKEN` - Token used to authenticate a runtime, bot, webhook, or provider integration.
+- `NPM_TOKEN` - Token used to authenticate a runtime, bot, webhook, or provider integration.
+- `OPENAI_API_KEY` - OpenAI API key used when the project generates AI answers from retrieved context.
+- `POSTGRES_URL` - Database
+- `VERCEL_TOKEN` - Token used to authenticate a runtime, bot, webhook, or provider integration.
+- `AI_GATEWAY_API_KEY` - API key used to authenticate with the named provider.
+## From The README
+The README already describes this area in project language. These excerpts are the reader-facing baseline before adding more examples.
+
+### 3. Set up environment variables
+- POSTGRES URL: Your PostgreSQL connection string (works with any PostgreSQL database)
+- ANTHROPIC API KEY: Your Anthropic API key for Claude
+- GITHUB TOKEN: GitHub personal access token (for repository access)
+- VERCEL TEAM ID: Your Vercel team ID
+- VERCEL PROJECT ID: Your Vercel project ID
+- VERCEL TOKEN: Your Vercel API token
+## How To Verify Changes
+- Identify whether the option affects security, runtime mounting, data access, or presentation.
+- Prefer examples that use the same names and defaults found in the project.
+- Call out adapter-specific behavior instead of implying every setting applies to every framework.

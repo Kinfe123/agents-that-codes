@@ -1,0 +1,50 @@
+---
+title: "Installation"
+description: "Install and configure Coding Agent Template."
+order: 20
+---
+
+# Installation
+
+Install the project dependencies first, then run the command or package script that starts Coding Agent Template locally.
+
+## Install, configure, verify
+Installation has three jobs: install dependencies, provide required runtime configuration, and verify the first local command.
+
+## Runtime inputs
+- Dependencies provide the framework, CLI, adapters, and runtime libraries used by the project.
+- Environment variables provide documented secrets, URLs, provider tokens, and deployment-specific behavior.
+- Package scripts provide repeatable commands for local development, production builds, tests, and release tasks.
+
+## Verify setup
+- Dependencies install with the package manager already used by the project.
+- Required environment variables are present before runtime commands are executed.
+- The primary command starts, builds, or verifies the project without needing undocumented manual steps.
+
+## Install Dependencies
+Run `pnpm install` from the project root.
+
+## Configure Environment Variables
+Copy `.env.example` into `.env` and fill in the required values before running the project.
+
+- `AI_GATEWAY_API_KEY` - API key used to authenticate with the named provider.
+- `ANTHROPIC_API_KEY` - Required API Keys
+- `CURSOR_API_KEY` - Optional API Keys (depending on which agents you want to use)
+- `ENCRYPTION_KEY` - Optional Encryption Key (used to encrypt MCP secrets in the database)
+- `GITHUB_TOKEN` - Token used to authenticate a runtime, webhook, or provider integration.
+- `OPENAI_API_KEY` - OpenAI API key used when the project generates AI answers from retrieved context.
+- `POSTGRES_URL` - Database
+- `VERCEL_PROJECT_ID` - defaults to `your-project-id` when not provided.
+- `VERCEL_TEAM_ID` - Vercel Sandbox Configuration
+- `VERCEL_TOKEN` - Token used to authenticate a runtime, webhook, or provider integration.
+
+## Run the project
+Use `pnpm dev` as the first local command for this repository.
+
+## Runtime coverage
+- Next.js
+
+## Repository scripts
+- `dev`: `next dev --turbopack` starts the local development servers or watchers.
+- `build`: `next build --turbopack` creates the production build or compiled package artifacts.
+- `start`: `next start` starts the runtime process after dependencies or build output are ready.

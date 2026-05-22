@@ -1,0 +1,30 @@
+---
+title: "Database Adapters"
+description: "Database adapters connect the product to the persistence layer used by the host application."
+order: 40
+---
+
+# Database Adapters
+
+Database adapter docs explain how the product connects to the persistence layer used by the host application. They identify supported adapters, the expected provider names, and what needs to be migrated before the runtime can read or write records safely.
+
+## Runtime contract
+Treat each setting as part of the runtime contract: credentials unlock external services, adapter settings control integration behavior, and project config files decide how the app starts.
+
+## Required environment variables
+- `POSTGRES_URL` - Database
+
+## Project config files
+- `drizzle.config.ts` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/_journal.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0000_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0001_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0002_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0003_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0004_snapshot.json` (database) - Database schema or adapter configuration.
+- `lib/db/migrations/meta/0005_snapshot.json` (database) - Database schema or adapter configuration.
+
+## Verify changes
+- Run `pnpm dev` after setting the variables.
+- Open the app, route, or command that reads this configuration and confirm it reaches the expected state.
+- If setup fails, check missing variables, database connectivity, and adapter-specific settings before debugging application logic.
